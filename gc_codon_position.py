@@ -2,7 +2,7 @@
 import pandas as pd
 
 #Load dataset
-data = pd.read_csv("simplified_supplementary_15.csv")
+data = pd.read_csv("simplified_supplementary_15_32.csv")
 
 #Function to calculate GC content
 def calculate_gc_content(codon):
@@ -26,12 +26,12 @@ for index, row in data.iterrows():
     gc_content = gc_content_for_codons(sequence)
     gc_contents.append(gc_content)
 
-#Add the calculated GC content for each column 
-for i in range(30):
+#Add the calculated GC content for each column
+for i in range(32):
     data[f"gc_content_codon_{i+1}"] = [gc_list[i] if len(gc_list) > i else None for gc_list in gc_contents]
 
 #Save to new csv
-data.to_csv("supplementary_codon_gc.csv", index=False)
+data.to_csv("supplementary_codon_gc_32_dupe.csv", index=False)
 
 #print to say all done
 print("All done")
