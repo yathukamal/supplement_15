@@ -12,7 +12,7 @@ data_cleaned = data.dropna(subset=["clean.lin.prot.mean", "ss.rna.dna.mean"])
 extracted_data = data_cleaned[["id", "gs.sequence", "clean.lin.prot.mean", "ss.rna.dna.mean"]]
 
 #Save the extracted data to a new CSV file and print that the action is completed
-extracted_data.to_csv("simplified_supplementary_15.csv", index=False)
+extracted_data.to_csv("simplified_supplementary_15_32.csv", index=False)
 print("All done")
 
 ##Part 2 calculating protein by RNA##
@@ -20,26 +20,12 @@ print("All done")
 import pandas as pd
 
 #Load the dataset
-data = pd.read_csv('simplified_supplementary_15.csv')
+data = pd.read_csv('simplified_supplementary_15_32.csv')
 
 #Calculate protein per RNA by dividing the protein column by RNA column
 data["protein_per_rna"] = data["clean.lin.prot.mean"] / data["ss.rna.dna.mean"]
 
 #Update csv with new column of protein per rna data
-data.to_csv("simplified_supplementary_15.csv", index=False)
-
-print("All done")
-
-##Part 3 making gc.sequence 90 codons##
-#import libraries
-import pandas as pd
-
-#Load the dataset
-data = pd.read_csv("simplified_supplementary_15.csv")
-
-#Make every sequence 90 nucleotides(30 codons)
-data["gs.sequence"] = data["gs.sequence"].str[:90]
-#Update CSV to include changes
-data.to_csv("simplified_supplementary_15.csv", index=False)
+data.to_csv("simplified_supplementary_15_32.csv", index=False)
 
 print("All done")
