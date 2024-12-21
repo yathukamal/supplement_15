@@ -1,4 +1,4 @@
-#Install packages
+#Install libraries to use
 #install.packages("psych")
 library(psych)
 
@@ -6,11 +6,13 @@ library(psych)
 #Set working directory
 setwd("D:/supplementary_15")
 
-#Load dataset
+#Load dataset and read the CSV file 
 data1 <-read.csv("supplementary_codon_gc3_32.csv")
 
+#Prepare the dataset 
 #Remove column 1 and convert to data frame
 data2 <- as.data.frame(data1[-1])
+
 #get number of columns 
 dims <-dim(data2)[2]
 #do partial correlations
