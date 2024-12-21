@@ -12,5 +12,5 @@ Data, in the form of supplement 15, from Cambray et al's paper. For every id, pr
  a. stability_1000_gene_block_mean_first_codons.py -> looked at data related first 10 codons
  b. stability_1000_block_mean_mid_codons -> data related to mid 10 codons
  c. stability_1000_block_mean_last_codons -> data related to last 10 codons
-
+7. Partial correlation analysis of GC and GC3at codon positions 2-30
 
